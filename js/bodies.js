@@ -56,7 +56,7 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 		currentWidth * 2 / 3,
 		groundTop * 1 / 3,
 		5.5 * objectWidth / 100,
-		1.5 * objectWidth / 100, {
+		2 * objectWidth / 100, {
 			restitution: 0.8,
 			isStatic: false,
 			render: {
@@ -178,8 +178,8 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 	);
 	rect8.initialWidth = 7 * objectWidth / 100;
 	rect8.initialHeight = 7 * objectWidth / 100;
-	rect8.initialXScale = 0.4;
-	rect8.initialYScale = 0.4;
+	rect8.initialXScale = 0.4 * scaleFactor;
+	rect8.initialYScale = 0.4 * scaleFactor;
 	bodies.push(rect8);
 
 	const rect9 = Bodies.rectangle(
