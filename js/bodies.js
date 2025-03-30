@@ -176,8 +176,8 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 			}
 		}
 	);
-	rect8.initialWidth = 7 * objectWidth / 100;
-	rect8.initialHeight = 7 * objectWidth / 100;
+	rect8.initialWidth = 2 * objectWidth / 100;
+	rect8.initialHeight = 2 * objectWidth / 100;
 	rect8.initialXScale = 0.4 * scaleFactor;
 	rect8.initialYScale = 0.4 * scaleFactor;
 	bodies.push(rect8);
