@@ -1,0 +1,32 @@
+/* 重置默认样式，并让页面充满整个窗口 */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#divider {
+  position: fixed;
+  top: 50vh;   /* 窗口高度的三分之二 */
+  left: 0;
+  width: 100vw;   /* 横跨整个窗口 */
+  border-top: 0.1px solid gray; /* 1px 灰色分界线 */
+  z-index: 10000; /* 根据需要调整层级，确保在其他元素上面 */
+}
+
+/* 中间内容区域：Matter.js 画布挂载处 */
+#container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Matter.js 渲染的 canvas 自动填满 container */
+#container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  
+}
