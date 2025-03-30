@@ -1,104 +1,153 @@
 /* 整个 logo 层固定在窗口内，并用 flex 分布各个组 */
 #logo-layer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: space-between;  /* 左右两部分两端对齐 */
-  align-items: center;
-  z-index: 9999;
-  pointer-events: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: space-between;
+	/* 左右两部分两端对齐 */
+	align-items: center;
+	z-index: 9999;
+	pointer-events: none;
 }
 
 /* 包裹字母组和链接组的容器 */
 #logo-wrapper {
-  display: flex;
-  align-items: flex-end;  /* 底部对齐 */
+	display: flex;
+	align-items: flex-end;
+	/* 底部对齐 */
 }
 
 /* 字母组：水平排列，左对齐 */
 .logo-letters {
-  display: flex;
-  flex-direction: row;
-  gap: 0.6vw;        /* 字母之间的间隔 */
-  align-items: flex-end;  /* 将所有子项在垂直方向下对齐 */
-  margin-top: 30vh;  /* 向下移动整体字母 */
-  margin-left: 2vw; /* 向右移动整体字母 */
-  pointer-events: auto;   /* 内部需要交互 */
+	display: flex;
+	flex-direction: row;
+	gap: 0.6vw;
+	/* 字母之间的间隔 */
+	align-items: flex-end;
+	/* 将所有子项在垂直方向下对齐 */
+	margin-top: 30vh;
+	/* 向下移动整体字母 */
+	margin-left: 2vw;
+	/* 向右移动整体字母 */
+	pointer-events: auto;
+	/* 内部需要交互 */
 }
 
-#logo-J { width: 3vw; height: auto; object-fit: contain;}
-#logo-U { width: 3vw; height: auto; object-fit: contain;}
-#logo-M { width: 4.5vw; height: auto; object-fit: contain;}
-#logo-B { width: 3vw; height: auto; object-fit: contain;}
-#logo-L { width: 1.25vw; height: auto; object-fit: contain;}
-#logo-E { width: 3vw; height: auto; object-fit: contain;}
+#logo-J {
+	width: 3vw;
+	height: auto;
+	object-fit: contain;
+}
+
+#logo-U {
+	width: 3vw;
+	height: auto;
+	object-fit: contain;
+}
+
+#logo-M {
+	width: 4.5vw;
+	height: auto;
+	object-fit: contain;
+}
+
+#logo-B {
+	width: 3vw;
+	height: auto;
+	object-fit: contain;
+}
+
+#logo-L {
+	width: 1.25vw;
+	height: auto;
+	object-fit: contain;
+}
+
+#logo-E {
+	width: 3vw;
+	height: auto;
+	object-fit: contain;
+}
 
 
 
 /* 链接组：垂直排列 */
 .logo-links {
-  display: flex;
-  flex-direction: column;
-  margin-left: 1.5vw;
-  gap: 0.3vh;       /* 设为 2px 的均等间隔 */
-  pointer-events: auto;   /* 内部需要交互 */
+	display: flex;
+	flex-direction: column;
+	margin-left: 1.5vw;
+	gap: 0.3vh;
+	/* 设为 0.3px 的均等间隔 */
+	pointer-events: auto;
+	/* 内部需要交互 */
 }
 
 .logo-links a {
-  position: relative;
-  font-family: "Avenir", sans-serif;           /* 需要提供字体库 */
-  color: #F9D65E;           /* 文本颜色为黄色 */
-  text-decoration: none;   /* 去除下划线 */
-  font-size: 0.8vw;         /* 根据需要调整字体大小 */
-  text-align: left;      /* 保证文字左对齐 */
-  display: inline-block; /* 让链接成为块级元素，便于固定宽度 */
+	position: relative;
+	font-family: "Avenir", sans-serif;
+	/* 需要提供字体库 */
+	color: #F9D65E;
+	/* 文本颜色为黄色 */
+	text-decoration: none;
+	/* 去除下划线 */
+	font-size: 0.8vw;
+	/* 根据需要调整字体大小 */
+	text-align: left;
+	/* 保证文字左对齐 */
+	display: inline-block;
+	/* 让链接成为块级元素，便于固定宽度 */
 }
 
 /* 包裹文字的 span 设置过渡效果 */
 .link-text {
-  display: inline-block;
-  transition: transform 0.3s ease;
+	display: inline-block;
+	transition: transform 0.3s ease;
 }
 
 /* 示例：为链接添加悬停前显示空心红色圆圈 */
 .logo-links a::before {
-  content: "";
-  position: absolute;
-  left: 0;       /* 调整圆圈与图片的距离 */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0.4vw;
-  height: 0.4vw;
-  border: 0.1vw solid #A82B43;
-  border-radius: 50%;
-  background-color: transparent;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+	content: "";
+	position: absolute;
+	left: 0;
+	/* 调整圆圈与图片的距离 */
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0.4vw;
+	height: 0.4vw;
+	border: 0.1vw solid #A82B43;
+	border-radius: 50%;
+	background-color: transparent;
+	opacity: 0;
+	transition: opacity 0.3s ease;
 }
 
 /* 悬停时，文字向右移动 */
 .logo-links a:hover .link-text {
-  transform: translateX(0.8vw);  /* 向右移动15px，可根据需要调整 */
+	transform: translateX(0.8vw);
+	/* 向右移动15px，可根据需要调整 */
 }
 
 .logo-links a:hover::before {
-  opacity: 1;
+	opacity: 1;
 }
 
 /* 底部enjin */
 #logo-enjin {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 0; /* 根据需要调整 z-index */
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 0;
+	/* 根据需要调整 z-index */
 }
 
 /* 调整 logo-enjin 内部图片的大小 */
 #logo-enjin img {
-  width: 5vw;  /* 根据需要调整大小 */
-  height: auto; /* 保持纵横比 */
+	width: 5vw;
+	/* 根据需要调整大小 */
+	height: auto;
+	/* 保持纵横比 */
 }
