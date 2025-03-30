@@ -33,6 +33,9 @@ const render = Render.create({
     }
 });
 
+  console.log('Window width:', window.innerWidth);
+  console.log('Window height:', window.innerHeight);
+  console.log('Device Pixel Ratio:', window.devicePixelRatio);
 // 创建物理边界，使用动态计算后的厚度（补偿 pixelRatio）
 let boundaries = createPhysicalBoundaries(currentWidth, currentHeight, pixelRatio);
 World.add(world, [boundaries.bottom, boundaries.left, boundaries.right]);
@@ -154,8 +157,8 @@ const rectangles = [
 			        render: {
 			            sprite: {
 			                texture: circle_m_Image1,
-			                xScale: 0.08,
-			                yScale: 0.08
+			                xScale: 0.01,
+			                yScale: 0.01
 			            }
 			        }
 			    }
