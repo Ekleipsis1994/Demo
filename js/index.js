@@ -61,7 +61,8 @@ const rectangles = [
     Bodies.rectangle(
         currentWidth * 2/3, 
         groundTop * 1/3, 
-        20, 20, 
+        5.3 * currentWidth / 100,
+		5.3 * currentWidth / 100, 
         { 
             restitution: 0.8, 
             isStatic: false,
@@ -77,7 +78,8 @@ const rectangles = [
     Bodies.rectangle(
         currentWidth * 2/3, 
         groundTop * 1/3, 
-        20, 20, 
+        5.3 * currentWidth / 100,
+		5.3 * currentWidth / 100, 
         { 
             restitution: 0.8, 
             isStatic: false,
@@ -93,7 +95,8 @@ const rectangles = [
     Bodies.rectangle(
         currentWidth * 2 / 3, 
         groundTop * 1/3, 
-        20, 5, 
+        5.5 * currentWidth / 100,
+		1.5 * currentWidth / 100, 
         { 
             restitution: 0.8, 
             isStatic: false,
@@ -109,7 +112,8 @@ const rectangles = [
 	Bodies.rectangle(
 	    currentWidth * 4/5, 
 	    groundTop * 1/3, 
-	    20, 20, 
+	    5.5 * currentWidth / 100,
+		5.5 * currentWidth / 100, 
 	    { 
 	        restitution: 0.8, 
 	        isStatic: false,
@@ -125,7 +129,8 @@ const rectangles = [
     Bodies.rectangle(
     	    currentWidth * 2 / 3, 
     	    groundTop * 1/3, 
-    	    20, 20, 
+    	    6 * currentWidth / 100,
+			6 * currentWidth / 100, 
     	    { 
     	        restitution: 0.8, 
     	        isStatic: false,
@@ -141,7 +146,8 @@ const rectangles = [
 	Bodies.rectangle(
 			    currentWidth * 3 / 4, 
 			    groundTop * 1/3, 
-			    20, 20, 
+			    5.5 * currentWidth / 100,
+				5.5 * currentWidth / 100, 
 			    { 
 			        restitution: 0.8, 
 			        isStatic: false,
@@ -155,9 +161,10 @@ const rectangles = [
 			    }
 			),
 	Bodies.rectangle(
-		    currentWidth * 1/4 + 10, 
-		    50, 
-		    10, 10, 
+		    currentWidth * 1/4, 
+		    groundTop * 1/3, 
+		    2.5 * currentWidth / 100,
+			2.5 * currentWidth / 100, 
 		    { 
 		        isStatic: false,
 		        render: {
@@ -171,8 +178,9 @@ const rectangles = [
 		),
 	Bodies.rectangle(
 		    currentWidth * 1/4 + 12, 
-		    50, 
-		    10, 10, 
+		    groundTop * 1/3, 
+		    2.5 * currentWidth / 100,
+			2.5 * currentWidth / 100, 
 		    { 
 		        isStatic: false,
 		        render: {
@@ -185,9 +193,10 @@ const rectangles = [
 		    }
 		),
 		Bodies.rectangle(
-		    currentWidth * 1/4 + 13, 
-		    50, 
-		    10, 10, 
+		    currentWidth * 1/4 + 20, 
+		    groundTop * 1/3, 
+		    2.5 * currentWidth / 100,
+			2.5 * currentWidth / 100, 
 		    { 
 		        restitution: 0.8, 
 		        isStatic: false,
@@ -201,9 +210,10 @@ const rectangles = [
 		    }
 		),
 		Bodies.rectangle(
-		    currentWidth * 1/4 + 14, 
-		    50, 
-		    10, 10, 
+		    currentWidth * 1/4 + 30, 
+		    groundTop * 1/3, 
+		    2.5 * currentWidth / 100,
+			2.5 * currentWidth / 100, 
 		    { 
 		        restitution: 0.8, 
 		        isStatic: false,
@@ -217,9 +227,10 @@ const rectangles = [
 		    }
 		),
 		Bodies.rectangle(
-		    currentWidth * 1/4 + 15, 
-		    50, 
-		    10, 10, 
+		    currentWidth * 1/4 + 40, 
+		    groundTop * 1/3, 
+		    2.5 * currentWidth / 100,
+			2.5 * currentWidth / 100, 
 		    { 
 		        restitution: 0.8, 
 		        isStatic: false,
@@ -233,9 +244,10 @@ const rectangles = [
 		    }
 		),
 		Bodies.rectangle(
-		    currentWidth * 1/4 + 16, 
-		    50, 
-		    10, 10, 
+		    currentWidth * 1/4 + 50, 
+		    groundTop * 1/3, 
+		    2.5 * currentWidth / 100,
+			2.5 * currentWidth / 100, 
 		    { 
 		        restitution: 0.8, 
 		        isStatic: false,
@@ -253,7 +265,8 @@ const rectangles = [
 const hoverableBody = Bodies.rectangle(
   currentWidth * 2/3, 
   groundTop * 1/3, 
-  20, 20, 
+  5.5 * currentWidth / 100,
+  5.5 * currentWidth / 100, 
   { 
       restitution: 0.8, 
       isStatic: false,
