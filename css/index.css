@@ -10,8 +10,8 @@ body {
 
 #divider {
 	position: fixed;
-	top: 50vh;
-	/* 窗口高度的三分之二 */
+	bottom: 50vh;
+	/* 窗口高度的二分之一 */
 	left: 0;
 	width: 100vw;
 	/* 横跨整个窗口 */

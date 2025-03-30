@@ -1,3 +1,4 @@
+
 // bodies.js
 
 function createBodies(currentWidth, groundTop, scaleFactor) {
@@ -5,12 +6,11 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 	
 	// 计算物体尺寸
 	const objectWidth = currentWidth * scaleFactor;
-	const objectHeight = groundTop * scaleFactor;
 	
 	// 创建物体，并保存初始尺寸
 	const rect1 = Bodies.rectangle(
 		currentWidth * 2 / 3,
-		groundTop * 1 / 3,
+		groundTop * 2 / 3,
 		7 * objectWidth / 100,
 		7 * objectWidth / 100, {
 			restitution: 0.8,
@@ -32,7 +32,7 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 
 	const rect2 = Bodies.rectangle(
 		currentWidth * 2 / 3,
-		groundTop * 1 / 3,
+		groundTop * 2 / 3,
 		7 * objectWidth / 100,
 		7 * objectWidth / 100, {
 			restitution: 0.8,
@@ -54,7 +54,7 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 
 	const rect3 = Bodies.rectangle(
 		currentWidth * 2 / 3,
-		groundTop * 1 / 3,
+		groundTop * 2 / 3,
 		5.5 * objectWidth / 100,
 		2 * objectWidth / 100, {
 			restitution: 0.8,
@@ -76,7 +76,7 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 
 	const rect4 = Bodies.rectangle(
 		currentWidth * 4 / 5,
-		groundTop * 1 / 3,
+		groundTop * 2 / 3,
 		7.5 * objectWidth / 100,
 		7.5 * objectWidth / 100, {
 			restitution: 0.8,
@@ -98,7 +98,7 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 
 	const rect5 = Bodies.rectangle(
 		currentWidth * 2 / 3,
-		groundTop * 1 / 3,
+		groundTop * 2 / 3,
 		9.5 * objectWidth / 100,
 		9.5 * objectWidth / 100, {
 			restitution: 0.8,
@@ -120,7 +120,7 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 
 	const rect6 = Bodies.rectangle(
 		currentWidth * 3 / 4,
-		groundTop * 1 / 3,
+		groundTop * 2 / 3,
 		6 * objectWidth / 100,
 		6 * objectWidth / 100, {
 			restitution: 0.8,
@@ -142,7 +142,7 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 
 	const rect7 = Bodies.rectangle(
 		currentWidth * 1 / 4,
-		groundTop * 1 / 3,
+		groundTop * 2 / 3,
 		2 * objectWidth / 100,
 		2 * objectWidth / 100, {
 			isStatic: false,
@@ -163,7 +163,7 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 
 	const rect8 = Bodies.rectangle(
 		currentWidth * 1 / 4 + 2 * currentWidth / 100,
-		groundTop * 1 / 3,
+		groundTop * 2 / 3,
 		2 * objectWidth / 100,
 		2 * objectWidth / 100, {
 			isStatic: false,
@@ -184,7 +184,7 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 
 	const rect9 = Bodies.rectangle(
 		currentWidth * 1 / 4 + 4 * currentWidth / 100,
-		groundTop * 1 / 3,
+		groundTop * 2 / 3,
 		2 * objectWidth / 100,
 		2 * objectWidth / 100, {
 			isStatic: false,
@@ -205,7 +205,7 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 
 	const rect10 = Bodies.rectangle(
 		currentWidth * 1 / 4 + 6 * currentWidth / 100,
-		groundTop * 1 / 3,
+		groundTop * 2 / 3,
 		2 * objectWidth / 100,
 		2 * objectWidth / 100, {
 			isStatic: false,
@@ -226,7 +226,7 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 
 	const rect11 = Bodies.rectangle(
 		currentWidth * 1 / 4 + 8 * currentWidth / 100,
-		groundTop * 1 / 3,
+		groundTop * 2 / 3,
 		2 * objectWidth / 100,
 		2 * objectWidth / 100, {
 			isStatic: false,
@@ -247,7 +247,7 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 
 	const rect12 = Bodies.rectangle(
 		currentWidth * 1 / 4 + 10 * currentWidth / 100,
-		groundTop * 1 / 3,
+		groundTop * 2 / 3,
 		2 * objectWidth / 100,
 		2 * objectWidth / 100, {
 			restitution: 0.8,
@@ -269,7 +269,7 @@ function createBodies(currentWidth, groundTop, scaleFactor) {
 
 	const hoverableBody = Bodies.rectangle(
 		currentWidth * 2 / 3,
-		groundTop * 1 / 3,
+		groundTop * 2 / 3,
 		5.5 * objectWidth / 100,
 		5.5 * objectWidth / 100, {
 			restitution: 0.8,

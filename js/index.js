@@ -14,9 +14,11 @@ let currentWidth = window.innerWidth;
 let currentHeight = window.innerHeight;
 const pixelRatio = window.devicePixelRatio || 1;
 
-// 定义基准宽度
+// 定义基准宽高
 const designWidth = 1920;
+const designHeight = 1080;
 
+// 设置缩放因子
 let scaleFactor = window.innerWidth / designWidth;
 
 // 保存初始窗口尺寸（全局，用于 resize 缩放计算）
@@ -54,12 +56,12 @@ const render = Render.create({
 	}
 });
 
+// 计算地面顶部 y 坐标
+const groundTop = 0.8 * currentHeight;
+
 // 创建物理边界，使用动态计算后的厚度（补偿 pixelRatio）
 let boundaries = createPhysicalBoundaries(currentWidth, currentHeight, scaleFactor);
-World.add(world, [boundaries.bottom, boundaries.left, boundaries.right]);
-
-// 计算地面顶部 y 坐标
-const groundTop = currentHeight - 10;
+World.add(world, [boundaries.top, boundaries.bottom, boundaries.left, boundaries.right]);
 
 // 从 bodies.js 中调用 createBodies 函数
 const rectangles = createBodies(currentWidth, groundTop, scaleFactor);
@@ -192,16 +194,29 @@ window.addEventListener('resize', () => {
 
 });
 
+const MAX_SPEED = 20; // 定义一个合适的最大速度
+
 // 监听引擎更新后的事件
 Matter.Events.on(engine, 'afterUpdate', () => {
 
 	rectangles.forEach(body => {
+		    // 计算当前速度
+		    const vx = body.velocity.x;
+		    const vy = body.velocity.y;
+		    const speed = Math.sqrt(vx * vx + vy * vy);
+			
+			    // 如果超过最大速度，则缩放到最大速度
+			    if (speed > MAX_SPEED) {
+			      const scale = MAX_SPEED / speed;
+			      Matter.Body.setVelocity(body, { x: vx * scale, y: vy * scale });
+			    }
+				
 		if (isOutOfBounds(body, currentWidth, currentHeight)) {
 
 			// 重置位置（这里示例将物体移回窗口中心）
 			Matter.Body.setPosition(body, {
 				x: currentWidth / 2,
-				y: currentHeight * 1 / 3
+				y: currentHeight * 2 / 3
 			});
 			// 同时重置速度，防止物体立即又飞出去
 			Matter.Body.setVelocity(body, {
