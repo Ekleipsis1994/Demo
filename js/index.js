@@ -13,6 +13,9 @@ let oldHeight = window.innerHeight;
 const engine = Engine.create();
 const world = engine.world;
 
+// 创建 Runner 实例
+const runner = Matter.Runner.create();
+
 // 获取容器（Matter.js 的渲染器将挂载到该容器内）
 const container = document.getElementById("container");
 container.style.width = currentWidth + "px";
@@ -325,8 +328,10 @@ window.addEventListener("wheel", (event) => {
     window.scrollBy(0, event.deltaY);
 });
 
-// 运行引擎和渲染器
-Engine.run(engine);
+// 使用 Runner 运行引擎
+Matter.Runner.run(runner, engine);
+
+// 启动渲染器保持不变
 Render.run(render);
 
 // resize 事件：更新容器、渲染器和边界，同时重新计算边界厚度
