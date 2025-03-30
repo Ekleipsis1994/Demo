@@ -69,16 +69,16 @@ const rectangles = [
     Bodies.rectangle(
         currentWidth * 2/3, 
         groundTop * 1/3, 
-        5.3 * currentWidth / 100,
-		5.3 * currentWidth / 100, 
+        7 * currentWidth / 100,
+		7 * currentWidth / 100, 
         { 
             restitution: 0.8, 
             isStatic: false,
             render: {
                 sprite: {
                     texture: rectangle_m_Image1,
-                    xScale: 0.06,
-                    yScale: 0.06
+                    xScale: 0.4,
+                    yScale: 0.4
                 }
             }
         }
@@ -86,16 +86,16 @@ const rectangles = [
     Bodies.rectangle(
         currentWidth * 2/3, 
         groundTop * 1/3, 
-        5.3 * currentWidth / 100,
-		5.3 * currentWidth / 100, 
+        7 * currentWidth / 100,
+		7 * currentWidth / 100, 
         { 
             restitution: 0.8, 
             isStatic: false,
             render: {
                 sprite: {
                     texture: rectangle_m_Image2,
-                    xScale: 0.06,  // 根据图片原始尺寸调整
-                    yScale: 0.06
+                    xScale: 0.4,  // 根据图片原始尺寸调整
+                    yScale: 0.4
                 }
             }
         }
@@ -111,8 +111,8 @@ const rectangles = [
             render: {
                 sprite: {
                     texture: rectangle_m_Image3,
-                    xScale: 0.08,
-                    yScale: 0.08
+                    xScale: 0.4,
+                    yScale: 0.4
                 }
             }
         }
@@ -120,16 +120,16 @@ const rectangles = [
 	Bodies.rectangle(
 	    currentWidth * 4/5, 
 	    groundTop * 1/3, 
-	    5.5 * currentWidth / 100,
-		5.5 * currentWidth / 100, 
+	    7.5 * currentWidth / 100,
+		7.5 * currentWidth / 100, 
 	    { 
 	        restitution: 0.8, 
 	        isStatic: false,
 	        render: {
 	            sprite: {
 	                texture: rectangle_m_Image4,
-	                xScale: 0.06,
-	                yScale: 0.06
+	                xScale: 0.4,
+	                yScale: 0.4
 	            }
 	        }
 	    }
@@ -137,16 +137,16 @@ const rectangles = [
     Bodies.rectangle(
     	    currentWidth * 2 / 3, 
     	    groundTop * 1/3, 
-    	    6 * currentWidth / 100,
-			6 * currentWidth / 100, 
+    	    9.5 * currentWidth / 100,
+			9.5 * currentWidth / 100, 
     	    { 
     	        restitution: 0.8, 
     	        isStatic: false,
     	        render: {
     	            sprite: {
     	                texture: rectangle_m_Image5,
-    	                xScale: 0.05,
-    	                yScale: 0.05
+    	                xScale: 0.4,
+    	                yScale: 0.4
     	            }
     	        }
     	    }
@@ -154,16 +154,16 @@ const rectangles = [
 	Bodies.rectangle(
 			    currentWidth * 3 / 4, 
 			    groundTop * 1/3, 
-			    5.5 * currentWidth / 100,
-				5.5 * currentWidth / 100, 
+			    6 * currentWidth / 100,
+				6 * currentWidth / 100, 
 			    { 
 			        restitution: 0.8, 
 			        isStatic: false,
 			        render: {
 			            sprite: {
 			                texture: circle_m_Image1,
-			                xScale: 0.01,
-			                yScale: 0.01
+			                xScale: 0.4,
+			                yScale: 0.4
 			            }
 			        }
 			    }
@@ -171,15 +171,15 @@ const rectangles = [
 	Bodies.rectangle(
 		    currentWidth * 1/4, 
 		    groundTop * 1/3, 
-		    2.5 * currentWidth / 100,
-			2.5 * currentWidth / 100, 
+		    2 * currentWidth / 100,
+			2 * currentWidth / 100, 
 		    { 
 		        isStatic: false,
 		        render: {
 		            sprite: {
 		                texture: rectangle_s_Image1,
-		                xScale: 0.1,
-		                yScale: 0.1
+		                xScale: 0.4,
+		                yScale: 0.4
 		            }
 		        }
 		    }
@@ -187,15 +187,15 @@ const rectangles = [
 	Bodies.rectangle(
 		    currentWidth * 1/4 + 12, 
 		    groundTop * 1/3, 
-		    2.5 * currentWidth / 100,
-			2.5 * currentWidth / 100, 
+		    2 * currentWidth / 100,
+			2 * currentWidth / 100, 
 		    { 
 		        isStatic: false,
 		        render: {
 		            sprite: {
 		                texture: rectangle_s_Image2,
-		                xScale: 0.1,
-		                yScale: 0.1
+		                xScale: 0.4,
+		                yScale: 0.4
 		            }
 		        }
 		    }
@@ -203,16 +203,16 @@ const rectangles = [
 		Bodies.rectangle(
 		    currentWidth * 1/4 + 20, 
 		    groundTop * 1/3, 
-		    2.5 * currentWidth / 100,
-			2.5 * currentWidth / 100, 
+		    2 * currentWidth / 100,
+			2 * currentWidth / 100, 
 		    { 
 		        restitution: 0.8, 
 		        isStatic: false,
 		        render: {
 		            sprite: {
 		                texture: rectangle_s_Image3,
-		                xScale: 0.1,
-		                yScale: 0.1
+		                xScale: 0.4,
+		                yScale: 0.4
 		            }
 		        }
 		    }
@@ -220,16 +220,16 @@ const rectangles = [
 		Bodies.rectangle(
 		    currentWidth * 1/4 + 30, 
 		    groundTop * 1/3, 
-		    2.5 * currentWidth / 100,
-			2.5 * currentWidth / 100, 
+		    2 * currentWidth / 100,
+			2 * currentWidth / 100, 
 		    { 
 		        restitution: 0.8, 
 		        isStatic: false,
 		        render: {
 		            sprite: {
 		                texture: rectangle_s_Image4,
-		                xScale: 0.1,
-		                yScale: 0.1
+		                xScale: 0.4,
+		                yScale: 0.4
 		            }
 		        }
 		    }
@@ -237,16 +237,16 @@ const rectangles = [
 		Bodies.rectangle(
 		    currentWidth * 1/4 + 40, 
 		    groundTop * 1/3, 
-		    2.5 * currentWidth / 100,
-			2.5 * currentWidth / 100, 
+		    2 * currentWidth / 100,
+			2 * currentWidth / 100, 
 		    { 
 		        restitution: 0.8, 
 		        isStatic: false,
 		        render: {
 		            sprite: {
 		                texture: rectangle_s_Image5,
-		                xScale: 0.1,  // 如果图片原始宽度是 100，则缩放到 50px 宽
-		                yScale: 0.1    // 如果图片原始高度是 60，则缩放到 30px 高
+		                xScale: 0.4,
+		                yScale: 0.4
 		            }
 		        }
 		    }
@@ -254,16 +254,16 @@ const rectangles = [
 		Bodies.rectangle(
 		    currentWidth * 1/4 + 50, 
 		    groundTop * 1/3, 
-		    2.5 * currentWidth / 100,
-			2.5 * currentWidth / 100, 
+		    2 * currentWidth / 100,
+			2 * currentWidth / 100, 
 		    { 
 		        restitution: 0.8, 
 		        isStatic: false,
 		        render: {
 		            sprite: {
 		                texture: rectangle_s_Image6,
-		                xScale: 0.1,
-		                yScale: 0.1
+		                xScale: 0.4,
+		                yScale: 0.4
 		            }
 		        }
 		    }
@@ -281,8 +281,8 @@ const hoverableBody = Bodies.rectangle(
       render: {
           sprite: {
               texture: circle_m_Image2,  // 原始图片路径
-              xScale: 0.08,
-              yScale: 0.08
+              xScale: 0.4,
+              yScale: 0.4
           }
       },
       // 添加自定义属性

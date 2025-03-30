@@ -1,7 +1,7 @@
 function createPhysicalBoundaries(width, height, pixelRatio) {
   // 定义基本边界厚度（视觉上希望显示的厚度）
-  const baseBottomHeight = 8;
-  const baseSideWidth = 5;
+  const baseBottomHeight =20 + height / 100;
+  const baseSideWidth = 5 + width / 100;
 
   // 根据 pixelRatio 进行补偿，内部实际边界厚度
   const bottomHeight = baseBottomHeight;
@@ -14,7 +14,7 @@ function createPhysicalBoundaries(width, height, pixelRatio) {
   });
 
   // 左侧边界
-  const left = Bodies.rectangle(sideWidth / 2, height / 2, sideWidth, height, {
+  const left = Bodies.rectangle(0, height / 2, sideWidth, height, {
     isStatic: true,
     render: { fillStyle: "#000000" }
   });
