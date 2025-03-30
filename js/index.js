@@ -36,11 +36,6 @@ const render = Render.create({
     }
 });
 
-window.addEventListener('DOMContentLoaded', function() {
-  console.log('Window width:', window.innerWidth);
-  console.log('Window height:', window.innerHeight);
-  console.log('Device Pixel Ratio:', window.devicePixelRatio);
-});
 // 创建物理边界，使用动态计算后的厚度（补偿 pixelRatio）
 let boundaries = createPhysicalBoundaries(currentWidth, currentHeight, pixelRatio);
 World.add(world, [boundaries.bottom, boundaries.left, boundaries.right]);
