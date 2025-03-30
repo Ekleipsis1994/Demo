@@ -14,6 +14,11 @@ let currentWidth = window.innerWidth;
 let currentHeight = window.innerHeight;
 const pixelRatio = window.devicePixelRatio || 1;
 
+// 定义基准宽度
+const designWidth = 1920;
+
+let scaleFactor = window.innerWidth / designWidth;
+
 // 保存初始窗口尺寸（全局，用于 resize 缩放计算）
 const initialWindowWidth = window.innerWidth;
 const initialWindowHeight = window.innerHeight;
@@ -50,14 +55,14 @@ const render = Render.create({
 });
 
 // 创建物理边界，使用动态计算后的厚度（补偿 pixelRatio）
-let boundaries = createPhysicalBoundaries(currentWidth, currentHeight, pixelRatio);
+let boundaries = createPhysicalBoundaries(currentWidth, currentHeight, scaleFactor);
 World.add(world, [boundaries.bottom, boundaries.left, boundaries.right]);
 
 // 计算地面顶部 y 坐标
 const groundTop = currentHeight - 10;
 
 // 从 bodies.js 中调用 createBodies 函数
-const rectangles = createBodies(currentWidth, groundTop);
+const rectangles = createBodies(currentWidth, groundTop, scaleFactor);
 
 // 添加物体到世界中
 World.add(world, rectangles);
@@ -75,7 +80,7 @@ const mouseConstraint = MouseConstraint.create(engine, {
 });
 World.add(world, mouseConstraint);
 
-// 监听碰撞事件（此处仅在碰撞时确保物体处于动态状态，可根据需要保留或修改）
+// 监听碰撞事件
 Events.on(engine, 'collisionStart', (event) => {
 	event.pairs.forEach(pair => {
 		let bodyA = pair.bodyA;
@@ -147,8 +152,8 @@ window.addEventListener('resize', () => {
 		}
 	});
 
-    // 使用初始窗口宽度计算统一的缩放因子
-    const scaleFactor = currentWidth / initialWindowWidth;
+	// 使用初始窗口宽度计算统一的缩放因子
+	scaleFactor = currentWidth / initialWindowWidth;
 
 	// 遍历所有需要更新位置的物体（例如 rectangles 数组里的所有物体）
 	rectangles.forEach(body => {
@@ -162,10 +167,10 @@ window.addEventListener('resize', () => {
 			const currentBodyWidth = body.bounds.max.x - body.bounds.min.x;
 			const currentBodyHeight = body.bounds.max.y - body.bounds.min.y;
 
-            // 计算需要缩放的比例
-            const scaleX = targetWidth / currentBodyWidth;
-            const scaleY = targetHeight / currentBodyHeight;
-			
+			// 计算需要缩放的比例
+			const scaleX = targetWidth / currentBodyWidth;
+			const scaleY = targetHeight / currentBodyHeight;
+
 			// 对物体进行缩放
 			Matter.Body.scale(body, scaleX, scaleY);
 
@@ -207,7 +212,7 @@ Matter.Events.on(engine, 'afterUpdate', () => {
 
 			// 设置一个较高的空气阻力，减缓下落速度
 			Matter.Body.set(body, {
-				frictionAir: 0.06
+				frictionAir: 0.08
 			});
 
 			// 一段时间后（例如2秒）恢复默认空气阻力
@@ -215,7 +220,7 @@ Matter.Events.on(engine, 'afterUpdate', () => {
 				Matter.Body.set(body, {
 					frictionAir: 0.01
 				});
-			}, 2000);
+			}, 100);
 		}
 	});
 });
